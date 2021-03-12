@@ -1,0 +1,6 @@
+﻿  lab9.cpp
+  QueueOfLong.cpp
+  QueueOfLong.h
+  Создание кода...
+x64\Debug\QueueOfLong.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+  lab9.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\lab9.exe

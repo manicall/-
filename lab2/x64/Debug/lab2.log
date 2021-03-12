@@ -1,4 +1,2 @@
 ﻿  lab2.cpp
-C:\Users\max\source\repos\СДА\lab2\lab2.cpp(15,12): warning C4244: return: преобразование "double" в "int", возможна потеря данных
-C:\Users\max\source\repos\СДА\lab2\lab2.cpp(17): warning C4715: a: значение возвращается не при всех путях выполнения
   lab2.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\lab2.exe
