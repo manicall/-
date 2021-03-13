@@ -1,6 +1,7 @@
-﻿  lab7.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (lab7.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  lab7.cpp
   ListOfPoints.cpp
 C:\Users\max\source\repos\СДА\лаб7\ListOfPoints.cpp(115,32): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
   xyPoint.h
   Создание кода...
-  лаб7.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\lab7.exe
+  лаб7.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\3.05.exe
