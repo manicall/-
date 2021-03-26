@@ -12,15 +12,12 @@
 #define IDI_SMALL                       108
 #define IDC_KURS                        109
 #define IDR_MAINFRAME                   128
-#define IDD_DIALOG1                     130
 #define IDD_GAME                        130
-#define IDC_RADIO1                      1006
-#define IDC_RADIO2                      1007
+#define IDC_DAYS                        1006
+#define IDC_MONTHS                      1007
 #define IDC_LIST1                       1009
-#define IDC_BUTTON1                     1010
 #define IDM_NEWGAME                     32773
 #define IDM_HELP                        32774
-#define ID_32775                        32775
 #define IDM_RULES                       32776
 #define IDC_STATIC                      -1
 
