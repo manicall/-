@@ -44,8 +44,8 @@ void rec(int p)
     for (int i = 0; i < n; i++)
         if ((a[p][i]) && (c[i] < 0))
         {
-            c[i] = p; rec(i); 
-            cout << "i = " << i << "; " <<  c[i] << ". ";
+            c[i] = p;
+            rec(i); 
         }
 }
 

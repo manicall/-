@@ -142,10 +142,10 @@
   <ItemGroup>
     <ClCompile Include="lab7.cpp" />
     <ClCompile Include="ListOfPoints.cpp" />
-    <ClCompile Include="xyPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListOfPoints.h" />
+    <ClInclude Include="xyPoint.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

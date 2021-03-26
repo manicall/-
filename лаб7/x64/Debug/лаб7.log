@@ -2,6 +2,5 @@
   lab7.cpp
   ListOfPoints.cpp
 C:\Users\max\source\repos\СДА\лаб7\ListOfPoints.cpp(115,32): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  xyPoint.h
   Создание кода...
   лаб7.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\3.05.exe
