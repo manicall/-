@@ -1,0 +1,95 @@
+/*
+	try {
+		Points2D.insert(Point2D(1, 2), 0);
+		Points2D.print_list();
+		Points2D.insert(Point2D(4, 5), 1);
+		Points2D.print_list();
+		Points2D.insert(Point2D(40, 50), 2);
+		Points2D.print_list();
+		Points2D.insert(Point2D(400, 500), 1);
+		Points2D.print_list();
+		Points2D.insert(Point2D(33, 33), 1);
+		Points2D.print_list();
+		Points2D.insert(Point2D(1, 111), 4);
+		Points2D.print_list();
+		Points2D.insert(Point2D(55, 55), 2);
+		Points2D.print_list();
+		Points2D.insert(Point2D(44, 44), 3);
+		Points2D.print_list();
+		Points2D.insert(Point2D(11, 11), 3);
+		Points2D.print_list();
+		Points2D.insert(Point2D(1, 1), 8);
+		Points2D.print_list();
+		Points2D.insert(Point2D(2, 2),8);
+		Points2D.print_list();
+		Points2D.insert(Point2D(3, 3), 8);
+		Points2D.print_list();
+		Points2D.insert(Point2D(4, 4), 7);
+		Points2D.print_list();
+		Points2D.erase(3);
+		Points2D.print_list();
+		Points2D.erase(0);
+		Points2D.print_list();
+		Points2D.erase(Points2D.get_size() - 3);
+		Points2D.print_list();
+		//std::cout << Points2D.at(10);
+		//Points2D.pop(-10);
+	}
+	catch (std::exception ex) { std::cerr << ex.what()<<std::endl; }
+	*/
+
+deque
+	try {
+		cout << "Начало: " << Deque.front()->str << endl;
+		cout << "Конец: " << Deque.back()->str << endl;
+	}
+	catch (exception ex) { cerr << ex.what() << endl; }
+	Deque.push_front("слово1");
+	cout << "Начало: " << Deque.front()->str << endl;
+	cout << "Конец: " << Deque.back()->str << endl;
+	Deque.push_front("слово2");
+	cout << "Начало: " << Deque.front()->str << endl;
+	cout << "Конец: " << Deque.back()->str << endl;
+	Deque.push_back("слово3");
+	cout << "Начало: " << Deque.front()->str << endl;
+	cout << "Конец: " << Deque.back()->str << endl;
+	Deque.pop_back();
+	cout << "Начало: " << Deque.front()->str << endl;
+	cout << "Конец: " << Deque.back()->str << endl;
+	Deque.pop_front();
+	cout << "Начало: " << Deque.front()->str << endl;
+	cout << "Конец: " << Deque.back()->str << endl;
+	Deque.pop_front();
+	try{
+		cout << "Начало: " << Deque.front()->str << endl;
+		cout << "Конец: " << Deque.back()->str << endl;
+	}
+	catch (exception ex) { cerr << ex.what() << endl; }
+
+queue
+	try {
+		cout << "Начало: " << Queue.front()->Long << endl;
+		cout << "Конец: " << Queue.back()->Long << endl;
+	}
+	catch (exception ex) { cerr << ex.what() << endl; }
+	Queue.push_back(1);
+	cout << "Начало: " << Queue.front()->Long << endl;
+	cout << "Конец: " << Queue.back()->Long << endl;
+	Queue.push_back(2);
+	cout << "Начало: " << Queue.front()->Long << endl;
+	cout << "Конец: " << Queue.back()->Long << endl;
+	Queue.push_back(3);
+	cout << "Начало: " << Queue.front()->Long << endl;
+	cout << "Конец: " << Queue.back()->Long << endl;
+	Queue.pop_front();
+	cout << "Начало: " << Queue.front()->Long << endl;
+	cout << "Конец: " << Queue.back()->Long << endl;
+	Queue.pop_front();
+	cout << "Начало: " << Queue.front()->Long << endl;
+	cout << "Конец: " << Queue.back()->Long << endl;
+	Queue.pop_front();
+	try {
+		cout << "Начало: " << Queue.front()->Long << endl;
+		cout << "Конец: " << Queue.back()->Long << endl;
+	}
+	catch (exception ex) { cerr << ex.what() << endl; }

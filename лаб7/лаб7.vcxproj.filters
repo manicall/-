@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab7.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="Point3D.h">
+      <Filter>Файлы заголовков</Filter>
     </ClCompile>
-    <ClCompile Include="ListOfPoints.cpp">
+    <ClCompile Include="task7.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ListOfPoints.h">
+    <ClInclude Include="Point2D.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="xyPoint.h">
+    <ClInclude Include="List.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

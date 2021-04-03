@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab8.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="DequeOfStrings.cpp">
+    <ClCompile Include="task8.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DequeOfStrings.h">
+    <ClInclude Include="Deque.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

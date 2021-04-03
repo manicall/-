@@ -140,12 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lab7.cpp" />
-    <ClCompile Include="ListOfPoints.cpp" />
+    <ClCompile Include="task7.cpp" />
+    <ClCompile Include="Point3D.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ListOfPoints.h" />
-    <ClInclude Include="xyPoint.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="Point2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -140,9 +140,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lab9.cpp" />
-    <ClCompile Include="QueueOfLong.cpp" />
-    <ClCompile Include="QueueOfLong.h" />
+    <ClCompile Include="task9.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
