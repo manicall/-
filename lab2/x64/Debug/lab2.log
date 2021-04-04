@@ -1,6 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (lab2.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   task2.cpp
-C:\Users\max\source\repos\СДА\lab2\task2.cpp(24,34): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
-C:\Users\max\source\repos\СДА\lab2\task2.cpp(24,29): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
-C:\Users\max\source\repos\СДА\lab2\task2.cpp(65,13): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+C:\Users\max\source\repos\СДА\lab2\FindCoefficients.h(19,1): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
   lab2.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\1.15.exe

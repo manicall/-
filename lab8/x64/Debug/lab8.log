@@ -1,3 +1,6 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (lab8.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : Процесс не может получить доступ к файлу "c:\users\max\source\repos\сда\x64\debug\3.15.ilk", так как этот файл используется другим процессом.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : Процесс не может получить доступ к файлу "c:\users\max\source\repos\сда\x64\debug\3.15.pdb", так как этот файл используется другим процессом.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (lab8.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   task8.cpp
+  LINK : не найден или не выполнена сборка C:\Users\max\source\repos\СДА\x64\Debug\3.15.exe при последней инкрементной компоновке; выполняется полная компоновка
   lab8.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\3.15.exe
