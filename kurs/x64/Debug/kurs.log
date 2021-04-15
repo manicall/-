@@ -1,2 +1,4 @@
 ﻿  kurs.cpp
+C:\Users\max\source\repos\СДА\kurs\Opponent.h(53,48): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\max\source\repos\СДА\kurs\Opponent.h(48,24): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   kurs.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\kurs.exe

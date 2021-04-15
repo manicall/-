@@ -27,7 +27,19 @@
     <ClInclude Include="kurs.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Lists.h">
+    <ClInclude Include="Opponent.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentInformation.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="GameControl.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DatesForGame.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

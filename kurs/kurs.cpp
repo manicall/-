@@ -10,6 +10,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-    DialogBox(hInstance, MAKEINTRESOURCE(IDD_GAME), NULL, GameWindowProc);
+    DialogBox(hInstance, MAKEINTRESOURCE(IDD_GAME), NULL, GameWindowProc); // старт программы
 }
 

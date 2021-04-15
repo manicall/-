@@ -140,8 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Lists.h" />
+    <ClInclude Include="GameControl.h" />
+    <ClInclude Include="DatesForGame.h" />
+    <ClInclude Include="CurrentInformation.h" />
+    <ClInclude Include="Controls.h" />
     <ClInclude Include="kurs.h" />
+    <ClInclude Include="Opponent.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

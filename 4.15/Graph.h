@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <list>
 #include <string>
 using namespace std;
 
@@ -14,9 +14,9 @@ class Graph {
 
     vector<vector<int>> BFS(); // обход вершин графа в ширину
     // добавляем в слой начальное значение
-    void InitializateLayers(queue<queue<int>>& Layers);
+    void InitializateLayers(list<list<int>>& Layers);
     // получаем промежуточные результаты
-    vector<int> GetIntermediateResults(queue<int> vertexes, queue<int>& newVertexes);
+    vector<int> GetIntermediateResults(list<int> vertexes, list<int>& newVertexes);
 public:
     Graph() {
         graph = {
@@ -41,7 +41,6 @@ public:
     int GetSize() { return size; }
 };
 
-
 void Graph::PrintLayers() {
     vector<vector<int>> vectors = BFS();
     int i = 0;
@@ -54,43 +53,42 @@ void Graph::PrintLayers() {
     }
 }
 
-
 vector<vector<int>> Graph::BFS() {
     vector<vector<int>> result; // массив слоев графа
-    queue<queue<int>> Layers;   // очередь, которая содержит очередь вершин каждого слоя
+    list<list<int>> Layers;   // очередь, которая содержит очередь вершин каждого слоя
     InitializateLayers(Layers);
     while (!Layers.empty()) {
-        queue<int> newVertexes; // содержит вершины нового слоя
+        list<int> newVertexes; // содержит вершины нового слоя
         vector<int> intermediateResult = GetIntermediateResults(Layers.front(), newVertexes);
         if (!intermediateResult.empty())
             result.push_back(intermediateResult);
         if (!newVertexes.empty())
-            Layers.push(newVertexes);
-        Layers.pop();
+            Layers.push_back(newVertexes);
+        Layers.pop_front();
     }
     return result;
 }
 
 // добавляем в слой начальное значение
-void Graph::InitializateLayers(queue<queue<int>>& Layers) {
-    queue<int> vertexes;
-    vertexes.push(startVertex);
+void Graph::InitializateLayers(list<list<int>>& Layers) {
+    list<int> vertexes;
+    vertexes.push_back(startVertex);
     marked[startVertex] = true;
-    Layers.push(vertexes);
+    Layers.push_back(vertexes);
 }
 
-vector<int> Graph::GetIntermediateResults(queue<int> vertexes, queue<int>& newVertexes) {
+vector<int> Graph::GetIntermediateResults(list<int> vertexes, list<int>& newVertexes) {
     vector<int> intermediateResult;
     while (!vertexes.empty()) {
         int vertex = vertexes.front(); // получаем вершину из списка вершин текущего слоя
         for (int i = 0; i < size; i++) {
             if (graph[vertex][i] && !marked[i]) {
                 marked[i] = true;
-                newVertexes.push(i);
+                newVertexes.push_back(i);
                 intermediateResult.push_back(i);
             }
         }
-        vertexes.pop();
+        vertexes.pop_front();
     }
     return intermediateResult;
 }
