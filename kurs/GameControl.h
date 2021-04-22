@@ -8,7 +8,6 @@
 #include <algorithm>
 
 class GameControl : public DatesForGame, public CurrentInformation, public Controls {
-
 	const short CURRENT = 1;
 	Opponent computer;
 	// вывод дней в листбокс начиная от текущего + 1
@@ -16,21 +15,21 @@ class GameControl : public DatesForGame, public CurrentInformation, public Contr
 	// вывод месяцев в листбокс начиная от текущего + 1
 	void MonthsInListBox(); 
 	// изменение строки состояния с текущей датой
-	void StateDateUpdate() { 
-		Static_SetText(hCurrentDate, ("Текущая дата: " + std::to_string(currentDay) + " " + months[currentMonth]).c_str());
-	}
+	void StateDateUpdate();
 	// изменение строки состояния с информацией о том кто делает ход
-	void CurrentMoveUpdate() {
-		ChangeCurrentMove();
-		if (currentMove == PLAYER)
-			Static_SetText(hCurrentMove, "Ход игрока");
-		else
-			Static_SetText(hCurrentMove, "Ход компьтера");
+	void CurrentMoveUpdate();
+	void CountMoveUpdate();
+	void ChangeRadioButton(HWND from, HWND to);
+	// обновление текущей даты
+	void SetCurrentDay() {
+		currentDay += ListBox_GetCaretIndex(hList) + CURRENT;
 	}
-	void CountMoveUpdate() {
-		CountMove++;
-		Static_SetText(hCountMove, ("Текущий ход: " + std::to_string(CountMove)).c_str());
+	// обновление текущего месяца
+	void SetCurrentMonth() {
+		currentMonth += ListBox_GetCaretIndex(hList) + CURRENT;
 	}
+
+	void AcceptMove();
 public:
 	// принятие хода игрока
 	void PlayerMakeAMove();
@@ -38,36 +37,8 @@ public:
 	void ListBoxUpdate();
 	// начало новой игры
 	void StartNewGame();
-	// обновление текущей даты
-	void SetCurrentDay() { 
-		SetCurrentDay(ListBox_GetCaretIndex(hList));
-	}
-	// обновление текущей даты
-	void SetCurrentDay(int index);
-	// обновление текущего месяца
-	void SetCurrentMonth() { 
-		SetCurrentMonth(ListBox_GetCaretIndex(hList));
-	}
-	// обновление текущего месяца
-	void SetCurrentMonth(int index);
 	void SetControls(HWND hList, HWND hDays, HWND hMonths, HWND hCurrentDate, HWND hCurrentMove, HWND); 
-
-	void AcceptMove() {
-		ListBoxUpdate();
-		CurrentMoveUpdate();
-		CountMoveUpdate();
-
-	}
-	void Move() {
-		if (!IsGameOver()) {
-			PlayerMakeAMove();
-			AcceptMove();
-
-			computer.MakeAMove(currentDay, currentMonth);
-			//AcceptMove();
-		}
-		CheckWin();
-	}
+	void Move();
 };
 
 inline void GameControl::DaysInListBox()
@@ -75,6 +46,7 @@ inline void GameControl::DaysInListBox()
 	ListBoxClear(hList);
 	for (int day = currentDay + CURRENT; day <= days[months[currentMonth]]; day++) // от выбранного дня до количества дней в месяце
 		ListBox_AddString(hList, (std::to_string(day) + " " + months[currentMonth]).c_str());
+	UpdateWindow(hList);
 	ListBox_SetCurSel(hList, 0);
 }
 
@@ -87,6 +59,22 @@ inline void GameControl::MonthsInListBox()
 		}
 	);
 	ListBox_SetCurSel(hList, 0);
+}
+
+void GameControl::StateDateUpdate() {
+	Static_SetText(hCurrentDate, ("Текущая дата: " + std::to_string(currentDay) + " " + months[currentMonth]).c_str());
+}
+// изменение строки состояния с информацией о том кто делает ход
+void GameControl::CurrentMoveUpdate() {
+	ChangeCurrentMove();
+	if (currentMove == PLAYER)
+		Static_SetText(hCurrentMove, "Ход игрока");
+	else
+		Static_SetText(hCurrentMove, "Ход компьтера");
+}
+void GameControl::CountMoveUpdate() {
+	countMove++;
+	Static_SetText(hCountMove, ("Текущий ход: " + std::to_string(countMove)).c_str());
 }
 
 inline void GameControl::PlayerMakeAMove() {
@@ -107,32 +95,31 @@ inline void GameControl::ListBoxUpdate()
 		Button_SetCheck(hDays, true);
 		DaysInListBox();
 	}
-	if (IsListBoxEmpty()){
-		ChangeRadioButton();
-		if (!IsGameOver())
-			ListBoxUpdate(); // если список пуст
+	if (IsListBoxEmpty()) {
+		if (Button_GetCheck(hDays))
+			ChangeRadioButton(hDays, hMonths);
+		else
+			ChangeRadioButton(hMonths, hDays);
 	}
 	StateDateUpdate();	
 }
 
+void GameControl::ChangeRadioButton(HWND from, HWND to) {
+	Button_SetCheck(from, false);
+	Button_SetCheck(to, true);
+	if (hDays == to)
+		DaysInListBox();
+	else
+		MonthsInListBox();
+}
+
+
 inline void GameControl::StartNewGame()
 {
 	NewGame();
-	Button_Enable(hDays, true);
-	Button_Enable(hMonths, true);
 	if (Button_GetCheck(hMonths))
-		ChangeRadioButton();
+		ChangeRadioButton(hMonths, hDays);
 	ListBoxUpdate();
-}
-
-inline void GameControl::SetCurrentDay(int index)
-{
-	currentDay += index + CURRENT;
-}
-
-inline void GameControl::SetCurrentMonth(int index)
-{
-	currentMonth += index + CURRENT;
 }
 
 inline void GameControl::SetControls(HWND hList, HWND hDays, HWND hMonths, HWND hCurrentDate, HWND hCurrentMove, HWND hCountMove)
@@ -145,3 +132,21 @@ inline void GameControl::SetControls(HWND hList, HWND hDays, HWND hMonths, HWND 
 	this->hCountMove = hCountMove;
 }
 
+void GameControl::AcceptMove() {
+	ListBoxUpdate();
+	CurrentMoveUpdate();
+	CountMoveUpdate();
+}
+
+void GameControl::Move() {
+	if (!IsGameOver()) {
+		PlayerMakeAMove();
+		AcceptMove();
+		CheckWin();
+		if (!IsGameOver()) {
+			computer.MakeAMove(currentDay, currentMonth);
+			AcceptMove();
+		}
+	}
+	CheckWin();
+}

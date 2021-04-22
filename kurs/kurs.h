@@ -47,19 +47,17 @@ INT_PTR CALLBACK GameWindowProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM l
         hMonths =      GetDlgItem(hDlg, IDC_MONTHS);
         hCurrentDate = GetDlgItem(hDlg, IDC_CURRENTDATE);
         hCurrentMove = GetDlgItem(hDlg, IDC_CURRENTMOVE);
-        hCountMove = GetDlgItem(hDlg, IDC_COUNTMOVE);
+        hCountMove =   GetDlgItem(hDlg, IDC_COUNTMOVE);
 
         gameControl.SetControls(hList, hDays, hMonths, hCurrentDate, hCurrentMove, hCountMove);
-        gameControl.ListBoxUpdate();
+        gameControl.StartNewGame();
         return (INT_PTR)TRUE;
     case WM_COMMAND:
     {
-
         int wmId = LOWORD(wParam); 
         // Разобрать выбор в меню:
         switch (wmId)
         {
-
         case IDOK:        gameControl.Move(); break;
         case IDCANCEL:    DestroyWindow(hDlg);  break;
         case IDC_DAYS:    gameControl.ListBoxUpdate();  break;

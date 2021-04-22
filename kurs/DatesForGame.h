@@ -25,6 +25,4 @@ public:
 				days[months[i]] = 28;
 		}
 	}
-	std::map<std::string, int> GetDays() { return days; }
-	std::vector<std::string> GetMonths() { return months; }
 };
