@@ -82,8 +82,6 @@ inline void GameControl::PlayerMakeAMove() {
 		SetCurrentDay();			
 	else if (Button_GetCheck(hMonths))
 		SetCurrentMonth();
-	else 
-		MessageBoxA(0, "Невозможно подтвердить выбор,\nтак как необходимо выбрать дни или месяцы", 0, 0 | MB_ICONERROR);	
 	ListBoxClear(hList);
 }
 
@@ -143,7 +141,6 @@ void GameControl::Move() {
 	if (!IsGameOver()) {
 		PlayerMakeAMove();
 		AcceptMove();
-		CheckWin();
 		if (!IsGameOver()) {
 			computer.MakeAMove(currentDay, currentMonth);
 			AcceptMove();
