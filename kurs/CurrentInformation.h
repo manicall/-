@@ -29,7 +29,7 @@ protected:
 	void NewGame() {
 		currentDay = 1;
 		currentMonth = 0;
-		countMove = 1;
+		countMove = 0;
 		currentMove = Move::PLAYER;
 	}
 	void ChangeCurrentMove() {

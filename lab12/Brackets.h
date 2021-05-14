@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <fstream>
 #include <stack>
+#include <string>
 using namespace std;
 
 class Brackets {
@@ -9,20 +9,24 @@ class Brackets {
     string expression;
 public:
     Brackets() {
-        ifstream file("input.txt");
-        while (!file.eof()) {
-            string temp;
-            file >> temp;
-            expression += temp;
-        }
+        cout << "Введите скобки: "; getline(cin, expression);
     }
 
     bool IsBracketsMatch();
     void PrintAnswer();
     void PrintExpression();
+    bool IsBracketsExist() {
+        for (auto c : expression)
+        { 
+            if(c == '<' || c == '{' || c == '>' || c == '}')
+            return true; 
+        }
+        return false;
+    }
     bool IsExpressionEmpty() {
         if (expression == "")
             return true;
+        else return false;
     }
 };
 
@@ -48,7 +52,7 @@ bool Brackets::IsBracketsMatch() {
 }
 
 void Brackets::PrintAnswer() {
-    if (IsExpressionEmpty())
+    if (!IsBracketsExist())
         cout << "Скобки отсутствуют" << endl;
     else {
         if (IsBracketsMatch())

@@ -1,3 +1,2 @@
 ﻿  task12.cpp
-C:\Users\max\source\repos\СДА\lab12\Brackets.h(26): warning C4715: Brackets::IsExpressionEmpty: значение возвращается не при всех путях выполнения
   lab12.vcxproj -> C:\Users\max\source\repos\СДА\x64\Debug\4.25.exe

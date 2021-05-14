@@ -117,6 +117,7 @@ void GameControl::ChangeRadioButton(HWND from, HWND to) {
 inline void GameControl::StartNewGame()
 {
 	NewGame();
+	CountMoveUpdate();
 	if (Button_GetCheck(hMonths))
 		ChangeRadioButton(hMonths, hDays);
 	ListBoxUpdate();

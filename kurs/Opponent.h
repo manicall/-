@@ -27,6 +27,13 @@ class  Opponent : protected DatesForGame {
 	Date RandomDate(int currentDay, int currentMonth);
 	Date LoseDate(int currentDay, int currentMonth);
 	Date TryWin(int currentDay, int currentMonth);
+	bool RecFindLoseDate(std::vector<Date>::iterator ItLoseDates, Date date) {
+		if (ItLoseDates == LoseDates.end())
+			return false;
+		else if (*ItLoseDates == date)
+			return true;
+		return RecFindLoseDate(++ItLoseDates, date);
+	}
 
 public:
 	Opponent();
@@ -80,16 +87,19 @@ Opponent::Opponent() {
 		LoseDates.push_back(Date(i, j));
 }
 
+
 void Opponent::MakeAMove(int& currentDay, int& currentMonth) {
 	Date newDate = TryWin(currentDay, currentMonth);
 	if (newDate == Date(currentDay, currentMonth))
 	{
-		auto It = std::find(LoseDates.begin(), LoseDates.end(), Date(currentDay, currentMonth));
-		if (It != LoseDates.end())
+		if (RecFindLoseDate(LoseDates.begin(), Date(currentDay, currentMonth)))
 			newDate = RandomDate(currentDay, currentMonth);
 		else
 			newDate = LoseDate(currentDay, currentMonth);
 	}
 	currentDay = newDate.GetDay();
 	currentMonth = newDate.GetMonth();
-}
+
+
+} 
+
